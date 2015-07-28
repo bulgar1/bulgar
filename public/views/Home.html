@@ -1,0 +1,18 @@
+<!-- div Id of "body" is assigned in order for us to manipulate the css
+	from our Javascript files..see Dom Manipulation-->
+	<div id = "body">
+<!-- ng-controller enables the Javascript Homecontroller connection
+	with the HTML(view). We recieve and send info to the Homecontroller via our "vm" or "view-model" marker. Remember on the HomeController.js page we set vm to equal the function Homecontroller with (var vm = this)  -->
+	<div ng-controller="HomeController as vm">
+		<!--Moustache tags and "vm" marker used to RECIEVE info from the Homecontroller
+		vm.title really means HomeController.title -->
+		<h1>{{vm.title}}</h1>
+	<!-- Ng.click and function used with "vm" marker to execute a specific function (changeCanvas() ) that we access because we set vm to equal the HomeController function itself (var vm = this) so
+	vm.ChangeCanvas() really means HomeController.changeCanvas -->
+		<input type="text" ng-model = "vm.number">
+	<button class="btn btn-default" ng-click="vm.fizzBuzz()">Button</button>
+	<p>
+		{{vm.result}}
+	</p>
+</div>
+</div>
